@@ -2,9 +2,9 @@ FROM ubuntu:16.04
 
 MAINTAINER Carlo Eugster <carlo@relaun.ch>
 
-RUN  apt-get update \
-  && apt-get install -y wget \
-  && apt-get clean \
+RUN  apt update \
+  && apt install -y wget \
+  && apt clean \
   && rm -rf /var/lib/apt/lists/*
 
 RUN useradd -m -d /opt/factorio -s /bin/bash factorio \
