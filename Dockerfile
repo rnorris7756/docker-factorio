@@ -1,7 +1,5 @@
 FROM ubuntu:16.04
 
-MAINTAINER Carlo Eugster <carlo@relaun.ch>
-
 RUN  apt update \
   && apt install -y wget \
   && apt clean \
