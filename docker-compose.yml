@@ -1,0 +1,21 @@
+version: "2"
+
+services:
+  factorio:
+    build:
+        context: ./
+        dockerfile: Dockerfile
+    container_name: factorio_experimental
+    volumes:
+      - ./saves:/opt/factorio/saves
+    ports:
+      - 34197:34197
+    environment:
+      - FACTORIO_AUTOSAVE_INTERVAL=15
+      - FACTORIO_AUTOSAVE_SLOTS=8
+      - FACTORIO_SERVER_NAME="Factorio Docker"
+      - FACTORIO_SERVER_DESCRIPTION="A Factorio server hosted in a Docker container."
+      - FACTORIO_SERVER_VISIBILITY=lan
+      # Visibility options: lan,
+    restart: always
+    stop_signal: SIGINT
