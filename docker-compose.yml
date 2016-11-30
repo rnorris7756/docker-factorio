@@ -9,7 +9,7 @@ services:
     volumes:
       - ./saves:/opt/factorio/saves
     ports:
-      - 34197:34197
+      - 34197:34197/udp
     environment:
       - FACTORIO_AUTOSAVE_INTERVAL=15
       - FACTORIO_AUTOSAVE_SLOTS=8
