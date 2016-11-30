@@ -53,3 +53,7 @@ docker run -d \
            --name factorio-server \
            some-factorio 
 ```
+
+# Docker-compose
+
+It is convenient to use a docker-compose file to manage the container.  An example docker-compose file is included in the source repository.
