@@ -1,5 +1,7 @@
 version: "2"
 
+#TODO: Add a .env file for listing server on WAN
+
 services:
   factorio:
     build:
@@ -17,5 +19,4 @@ services:
       - FACTORIO_SERVER_DESCRIPTION="A Factorio server hosted in a Docker container."
       - FACTORIO_SERVER_VISIBILITY=lan
       # Visibility options: lan,
-    restart: always
-    stop_signal: SIGINT
+    restart: unless-stopped
