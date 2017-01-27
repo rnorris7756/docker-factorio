@@ -20,3 +20,4 @@ services:
       - FACTORIO_SERVER_VISIBILITY=lan
       # Visibility options: lan,
     restart: unless-stopped
+    stop_grace_period: 5m
