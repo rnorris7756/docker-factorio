@@ -20,4 +20,13 @@ services:
       - FACTORIO_SERVER_VISIBILITY=lan
       # Visibility options: lan,
     restart: unless-stopped
-    stop_grace_period: 5m
+    #stop_grace_period: 5m
+  namecheap-ddns:
+    image: joshuamorris3/namecheap-ddns-update
+    container_name: factorio_namecheap_ddns_updater
+    restart: unless-stopped
+    environment:
+      - DOMAIN=${DDNS_DOMAIN}
+      - SUBDOMAINS=${DDNS_SUBDOMAIN}
+      - INTERVAL=600s
+      - NC_DDNS_PASS=${NC_DDNS_PASS}

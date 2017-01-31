@@ -1,8 +1,6 @@
-[![](https://badge.imagelayers.io/carloe/docker-factorio:latest.svg)](https://imagelayers.io/?images=carloe/docker-factorio:latest 'Get your own badge on imagelayers.io')
-
 # Introduction
 
-Dockerfile to build a [Factorio](https://www.factorio.com) game server image. You can find the pre-built images on Docker Hub at [carloe/docker-factorio](https://hub.docker.com/r/carloe/docker-factorio/)
+Dockerfile to build a [Factorio](https://www.factorio.com) game server image.
 
 # Basic Usage
 
