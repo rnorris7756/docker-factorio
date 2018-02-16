@@ -10,7 +10,7 @@ services:
     volumes:
       - ./saves:/opt/factorio/saves
     ports:
-      - 34197:${FACTORIO_PORT}/udp
+      - 34197:34197/udp
     env_file: env
     #stop_grace_period: 5m
   namecheap-ddns:
