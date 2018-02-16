@@ -1,3 +1,5 @@
+# Project-specific ignore files:
+env
 
 ### OSX ###
 .DS_Store

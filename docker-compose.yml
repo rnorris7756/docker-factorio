@@ -1,6 +1,4 @@
-version: "2"
-
-#TODO: Add a .env file for listing server on WAN
+version: "3"
 
 services:
   factorio:
@@ -8,25 +6,15 @@ services:
         context: ./
         dockerfile: Dockerfile
     container_name: factorio_experimental
+    restart: unless-stopped
     volumes:
       - ./saves:/opt/factorio/saves
     ports:
-      - 34197:34197/udp
-    environment:
-      - FACTORIO_AUTOSAVE_INTERVAL=15
-      - FACTORIO_AUTOSAVE_SLOTS=8
-      - FACTORIO_SERVER_NAME="Factorio Docker"
-      - FACTORIO_SERVER_DESCRIPTION="A Factorio server hosted in a Docker container."
-      - FACTORIO_SERVER_VISIBILITY=lan
-      # Visibility options: lan,
-    restart: unless-stopped
+      - 34197:${FACTORIO_PORT}/udp
+    env_file: env
     #stop_grace_period: 5m
   namecheap-ddns:
     image: joshuamorris3/namecheap-ddns-update
     container_name: factorio_namecheap_ddns_updater
     restart: unless-stopped
-    environment:
-      - DOMAIN=${DDNS_DOMAIN}
-      - SUBDOMAINS=${DDNS_SUBDOMAIN}
-      - INTERVAL=600s
-      - NC_DDNS_PASS=${NC_DDNS_PASS}
+    env_file: env
